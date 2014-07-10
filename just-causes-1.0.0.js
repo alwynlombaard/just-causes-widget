@@ -32,7 +32,7 @@
     var styleTags = JustCauses.styleTags;
 
     var scriptTags = document.getElementsByTagName('script');
-    var thisRequestUrl = 'http://blog.lombaard.co.uk/harmonograph/just-causes-1.0.0.js';
+    var thisRequestUrl = 'https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js';
 
     for (var i = 0; i < scriptTags.length; i++) {
         var scriptTag = scriptTags[i];
@@ -43,7 +43,7 @@
                 var styleTag = document.createElement("link");
                 styleTag.rel = "stylesheet";
                 styleTag.type = "text/css";
-                styleTag.href = "http://blog.lombaard.co.uk/harmonograph/just-causes-1.0.0.css";
+                styleTag.href = "https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.css";
                 styleTag.media = "all";
                 document.getElementsByTagName('head')[0].appendChild(styleTag);
                 styleTags.push(styleTag);
