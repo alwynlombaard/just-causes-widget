@@ -35,6 +35,27 @@
 <a name="just-causes-widget" class="anchor" href="#just-causes-widget"><span class="octicon octicon-link"></span></a>Just Causes Widget</h1>
 
 <p>A widget to embed on your site showing the causes you're fundraising for on JustGiving</p>
+
+<p>Warning! Alpha, do not use</p>
+
+<pre><code>&lt;script type="text/javascript" id="just-causes-eec47002-14f6-4f4a-985c-85a7e6ed3c59"&gt;
+      (function() {
+        function async_load(){
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          var theUrl = 'http://blog.lombaard.co.uk/harmonograph/just-causes-1.0.0.js';
+          s.src = theUrl;// + ( theUrl.indexOf("?") &gt;= 0 ? "&amp;" : "?") + 'ref=' + encodeURIComponent(window.location.href);
+          var embedder = document.getElementById('just-causes-eec47002-14f6-4f4a-985c-85a7e6ed3c59');
+          embedder.parentNode.insertBefore(s, embedder);
+        }
+        if (window.attachEvent)
+          window.attachEvent('onload', async_load);
+        else
+          window.addEventListener('load', async_load, false);
+      })();
+    &lt;/script&gt;
+</code></pre>
       </section>
     </div>
 
