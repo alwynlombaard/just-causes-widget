@@ -12,11 +12,6 @@
     }
     var JustCauses = global.JustCauses;
 	
-	if (!JustCauses.processedScripts) {
-		JustCauses.processedScripts = [];
-	}
-	var processedScripts = JustCauses.processedScripts;
-
     if (!JustCauses.styleTags) { 
 		JustCauses.styleTags = []; 
 	}
@@ -62,27 +57,24 @@
 	
 	var insertContentForScripts = function(){
 		$.each(scriptTags, function(i, scriptTag){
-			if (scriptTag.src === thisRequestUrl && $.inArray(scriptTag, JustCauses.processedScripts) < 0) {
-				JustCauses.processedScripts.push(scriptTag);
-					var div = document.createElement('div');
-					div.className = 'just-causes-widget';
-						
-					var models = $.map(JustCauses.fundraisingPageDetails, function(page){
-						return {pageTitle: page.title, charityName : page.charity.name, pageSummary: page.pageSummary, pageShortName: page.pageShortName};
-					});
-					div.innerHTML += "<ul>";
-					$.each(models, function(index, model){
-						div.innerHTML += "<li><a href='https://www.justgiving.com/" + model.pageShortName + "'>" + model.pageTitle + "</a>";
-						if(model.pageSummary){
-							div.innerHTML += "<p>" + model.pageSummary + "</p>";
-						}else{
-							div.innerHTML += "<p>" + model.pageTitle + "</p>";
-						}
-						div.innerHTML += "</li>";
-					} );
-					div.innerHTML += "</ul>";
-					scriptTag.parentNode.insertBefore(div, scriptTag);
-			}
+			var div = document.createElement('div');
+			div.className = 'just-causes-widget';
+				
+			var models = $.map(JustCauses.fundraisingPageDetails, function(page){
+				return {pageTitle: page.title, charityName : page.charity.name, pageSummary: page.pageSummary, pageShortName: page.pageShortName};
+			});
+			div.innerHTML += "<ul>";
+			$.each(models, function(index, model){
+				div.innerHTML += "<li><a href='https://www.justgiving.com/" + model.pageShortName + "'>" + model.pageTitle + "</a>";
+				if(model.pageSummary){
+					div.innerHTML += "<p>" + model.pageSummary + "</p>";
+				}else{
+					div.innerHTML += "<p>" + model.pageTitle + "</p>";
+				}
+				div.innerHTML += "</li>";
+			} );
+			div.innerHTML += "</ul>";
+			$(div).insertBefore(scriptTag);
 		});
 	};
 	
