@@ -7,10 +7,56 @@
     <meta name="description" content="Just-causes-widget : A widget to embed on your site showing the causes you&#39;re fundraising for on JustGiving" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.css">
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> 
 	<script src="generator.js"></script> 
 
     <title>Just-causes-widget</title>
+		
+	<style>
+		.just-causes-widget
+		{
+			border: 1px solid #78256d !important;
+			position: relative !important;
+			min-width: 179px !important;
+			font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+			font-weight: 300 !important;
+			font-size: 16px !important;
+			color: black !important;
+			max-width: 400px !important;
+		}
+
+		.just-causes-widget .just-causes-widget-inner{
+			padding: 0 0.5em !important;
+			margin-top: 1em !important;
+			margin-bottom: 0.75em !important;
+		}
+		
+		.just-causes-widget ul{
+			list-style-type: none !important;
+		}
+		
+		.just-causes-widget a,  .just-causes-widget a:hover{
+			display: block !important;
+			color: #000 !important;
+			text-decoration: none !important;
+		}
+		
+		.just-causes-widget .bold{
+			font-weight: 500 !important;
+		}
+		
+		.just-causes-widget .bottomMargin{
+			margin-bottom: 0.75em !important;
+		}
+		.just-causes-widget a, .just-causes-widget  p{
+			display: block !important;
+		}
+		
+		
+		
+	</style>
   </head>
 
   <body ng-controller="AppCtrl">
@@ -42,8 +88,26 @@
 	<input type="text" id="jgaccount" ng-model="jgAccount"/>
 	<textarea readonly ng-show="jgAccount" rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-{{guid}}');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script></textarea>
 	  
+	<!--
+	<div id="jg-widget-guitar-for-good-35"></div><script>(function(){var id="jg-widget-guitar-for-good-35",doc=document,pfx=(window.location.toString().indexOf("https")==0)?"https":"http";var el=doc.getElementById(id);if(el){var js=doc.createElement('script');js.src=pfx+"://widgets.justgiving.com/fundraisingpage/guitar-for-good?enc=ZT1qZy13aWRnZXQtZ3VpdGFyLWZvci1nb29kLTM1Jnc9NDAwJmI9aW5uZXImaWI9dGl0bGUsc3VtbWFyeQ%3D%3D";el.parentNode.insertBefore(js, el);}})();</script>
+	-->
+	
+	<!--
+	<div class="just-causes-widget cleanslate">
+	<div class="just-causes-widget-inner">
+		<ul>
+			<li class="bottomMargin">
+				<a href="http://www.justgiving.com/guitar-for-good" class="bold bottomMargin">Alwyn's guitar lessons for good</a>
+				<p class="bottomMargin">I'm teaching and donating the lesson fees for Save the Children because they make a difference to children in need</p>
+			</li>
+		</ul>
+	</div>
+	</div>
+-->
+	  
 	  </section>
     </div>
+	
 
 	
     <!-- FOOTER  -->
