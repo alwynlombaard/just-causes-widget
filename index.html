@@ -31,6 +31,8 @@
 			padding: 0 0.5em !important;
 			margin-top: 1em !important;
 			margin-bottom: 0.75em !important;
+			min-height: 100px !important;
+			line-height: 24px !important;
 		}
 		
 		.just-causes-widget ul{
@@ -44,7 +46,7 @@
 		}
 		
 		.just-causes-widget .bold{
-			font-weight: 500 !important;
+			font-weight: bold !important;
 		}
 		
 		.just-causes-widget .bottomMargin{
@@ -54,6 +56,22 @@
 			display: block !important;
 		}
 		
+		.just-causes-widget:after {
+		  content: ' ';
+		  position: absolute;
+		  width: 69px;
+		  height: 12px;
+		  bottom: -7px;
+		  right: 1em;
+		  padding: 5px;
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAMCAYAAAA02nCNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1MUU5RjZFRkM0OEMxMUUzOTZCRjg3NEY4QkVFQkNENyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1MUU5RjZGMEM0OEMxMUUzOTZCRjg3NEY4QkVFQkNENyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjUxRTlGNkVEQzQ4QzExRTM5NkJGODc0RjhCRUVCQ0Q3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjUxRTlGNkVFQzQ4QzExRTM5NkJGODc0RjhCRUVCQ0Q3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+T/NLJwAAA4JJREFUeNrclklsjVEUx9t6ppoFacQcVCzsUFE0poUFIYYKFsQCMaRiZVqUkBLzEPNY8xRDghjaxJwIaQwhaZSYWqHpe31ttbTP78j/S26e91pDLbjJL3c6995zzz3nfF9sKBSKccvCxLk3qdpB+ornG/fE/EZhjySqo+oms8+bsLnFkAKN4CUchpXIBcPW9mIsUM05pudNdVORvRtTC8UXYcwO6ghNObQ+dUMIcaCfvsk3llyAsaoo+7bSHlZasq4Q2VLqVPqZUMeR7QQjYRMEoRhua64Oa5qrHWSPr/TjTDdnvScblOwX5Epom95x1g4z5Pf1jBepb3vFwleoB+W+Gow2E9aBH+zAZMjSXGc27EG9BhLNSHAVlsJ5Z48c2I/sIuo9MkiVvCMXukAaShZKvjVMVHsr3FB7DmyGsXBMY+McWdvvEZRx1inzHBnV2hNl0Nm0l0Ab2qbvJRiv+y2HPjDc9wdeZq5/Qp6TBy2gG3yKIj9BXvf9gii5VS81j2ottSd3zFnzGG5Bf5gso0xyjH0/wjkNJesVM+JJ9q+UN1op1cOMd+Q2KHJ8f2KUJk4ovYCdcMVeHAXs9Y5obgA8Ux7xynEZJM0MErbv5bD+ZhmlL/J9qUdofEs1uq2Gg3BHj9cdemvuCfQzj5Ieo20Qvb9Y6Fk7LsKGdX/SKPmwW+0hSo4PUbyn5rzyhgM/Ur9zxlKQS6DuoBcq0ngFFIadcxoK1M7Ua5r8oWp0u82ZFkofvdwk41jJZa7Ywkme+GOiRbn21BfkWh8gwXExz0BNkBuky7slXcYYCjN0yQVwwJGx3NNSr2Lylrz3QgbcgzHKV54HlbsHoHwF63coF3TV8D4l7l/xbEvIg2EU6w4ooU+LJGiecs4+fXL/sxr7DBfhqSOXHRYCHXXQBSVgz+vsdd47ctdhLpewT68lupDCbplCbJzkLMTSolxoO1SqHaohdKKVVc7newrM0tcmolEsAZ6BEiWfB2ZNLvEasrRZmT6X9rrXlOQK5CV+xXy8DJnBuuf6cgS07rFefZdeK1tneUZcD0kKs6D2z/EMwfhbqm0aMy/JdcLNkw04bb/mn6qfbyFDPQzmy6unwivJ5blGiQ3/efvNn7VmZlTF6c+usdBsIGX/euG8eEXCUBnb/Veajh67a9Uo/0LBKInKSwOhraLEPGkDBtlZ657yv5VvAgwAbOpM+GzWDrsAAAAASUVORK5CYII=);
+		  background-color: #fff;
+		  -moz-box-sizing: border-box;
+		  -webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+		}
 		
 		
 	</style>
@@ -85,17 +103,21 @@
 <p>A widget to embed on your site showing the causes you're fundraising for on JustGiving</p>
 
 	<label for="jgaccount">Enter your JustGiving account email</label> 
-	<input type="text" id="jgaccount" ng-model="jgAccount"/>
+	<input type="email" id="jgaccount" ng-model="jgAccount"/>
 	<textarea readonly ng-show="jgAccount" rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-{{guid}}');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script></textarea>
 	  
 	<!--
 	<div id="jg-widget-guitar-for-good-35"></div><script>(function(){var id="jg-widget-guitar-for-good-35",doc=document,pfx=(window.location.toString().indexOf("https")==0)?"https":"http";var el=doc.getElementById(id);if(el){var js=doc.createElement('script');js.src=pfx+"://widgets.justgiving.com/fundraisingpage/guitar-for-good?enc=ZT1qZy13aWRnZXQtZ3VpdGFyLWZvci1nb29kLTM1Jnc9NDAwJmI9aW5uZXImaWI9dGl0bGUsc3VtbWFyeQ%3D%3D";el.parentNode.insertBefore(js, el);}})();</script>
-	-->
 	
-	<!--
+	<p>...</p>
+	
 	<div class="just-causes-widget cleanslate">
 	<div class="just-causes-widget-inner">
 		<ul>
+			<li class="bottomMargin">
+				<a href="http://www.justgiving.com/guitar-for-good" class="bold bottomMargin">Alwyn's guitar lessons for good</a>
+				<p class="bottomMargin">I'm teaching and donating the lesson fees for Save the Children because they make a difference to children in need</p>
+			</li>
 			<li class="bottomMargin">
 				<a href="http://www.justgiving.com/guitar-for-good" class="bold bottomMargin">Alwyn's guitar lessons for good</a>
 				<p class="bottomMargin">I'm teaching and donating the lesson fees for Save the Children because they make a difference to children in need</p>
