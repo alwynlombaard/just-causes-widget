@@ -34,7 +34,7 @@
 		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
     
-	var scriptTags = $.grep(document.getElementsByTagName('script'), function(scriptTag){return getHostAndPath(scriptTag.src) === scriptHostAndPath; });
+	var scriptTags = $.grep(document.getElementsByTagName('script'), function(scriptTag){return getHostAndPath(scriptTag.src).replace(/\//g, '') === scriptHostAndPath.replace(/\//g, ''); });
 	if(scriptTags && scriptTags.length > 0){
 		jgAccount = window.atob(getParameterByName("jgaccount", getQueryString(scriptTags[0].src)));
 		ref = getParameterByName("ref", getQueryString(scriptTags[0].src));
