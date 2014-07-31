@@ -93,7 +93,14 @@
 	};
 	
 	var getModel = function(page){
-		return {pageTitle: page.title, charityName : page.charity.name, pageSummary: page.pageSummary, pageShortName: page.pageShortName, pageUrl: "http://" + page.domain + "/" + page.pageShortName};
+		return  page.title 
+		?  {
+			pageTitle: page.title, 
+			charityName : page.charity ? page.charity.name : "", 
+			pageSummary: page.pageSummary, 
+			pageShortName: page.pageShortName, 
+			pageUrl: "http://" + page.domain + "/" + page.pageShortName
+		}: null;
 	};
 		
 	var updateWidgetContent = function(){
