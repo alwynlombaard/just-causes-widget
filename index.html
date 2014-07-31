@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="generatorApp">
 
   <head>
     <meta charset='utf-8' />
@@ -7,18 +7,20 @@
     <meta name="description" content="Just-causes-widget : A widget to embed on your site showing the causes you&#39;re fundraising for on JustGiving" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> 
+	<script src="generator.js"></script> 
 
     <title>Just-causes-widget</title>
   </head>
 
-  <body>
+  <body ng-controller="AppCtrl">
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/alwynlombaard/just-causes-widget">View on GitHub</a>
 
-          <h1 id="project_title">Just-causes-widget</h1>
+          <h1 id="project_title">Just-causes-widget Beta</h1>
           <h2 id="project_tagline">A widget to embed on your site showing the causes you&#39;re fundraising for on JustGiving</h2>
 
             <section id="downloads">
@@ -32,17 +34,14 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="just-causes-widget" class="anchor" href="#just-causes-widget"><span class="octicon octicon-link"></span></a>Just Causes Widget</h1>
+<a name="just-causes-widget" class="anchor" href="#just-causes-widget"><span class="octicon octicon-link"></span></a>Just Causes Widget Beta</h1>
 
 <p>A widget to embed on your site showing the causes you're fundraising for on JustGiving</p>
 
-<p>Warning! Alpha, do not use</p>
-
-<pre><code>&lt;script type="text/javascript" id="just-causes-eec47002-14f6-4f4a-985c-85a7e6ed3c59"&gt;(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount=YWx3eW5AanVzdGdpdmluZy5jb20=';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-eec47002-14f6-4f4a-985c-85a7e6ed3c59');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();&lt;/script&gt;</code></pre>
-      
+	<label for="jgaccount">Enter your JustGiving account email</label> 
+	<input type="text" id="jgaccount" ng-model="jgAccount"/>
+	<textarea readonly ng-show="jgAccount" rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-{{guid}}');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script></textarea>
 	  
-	  <script type="text/javascript" id="just-causes-eec47002-14f6-4f4a-985c-85a7e6ed3c59">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount=YWx3eW5AanVzdGdpdmluZy5jb20=';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-eec47002-14f6-4f4a-985c-85a7e6ed3c59');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script>
-
 	  </section>
     </div>
 
