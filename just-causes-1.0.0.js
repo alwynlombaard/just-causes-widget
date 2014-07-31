@@ -66,7 +66,6 @@
 				}
 			});
 			retrieveFundraisingPageDetails(JustCauses.fundraisingPages);
-		}).always(function () {
 		});
 	}
 	
@@ -85,7 +84,6 @@
 				if(pagesProcessed === pages.length){
 					JustCauses.isDataInit = true;
 				}
-			}).always(function () {
 			});
 		});
 	};
@@ -100,24 +98,25 @@
 		
 	var updateWidgetContent = function(){
 		var models = getModels();
-		var content = "<ul>";
+		var content = '<div class="just-causes-widget-inner"><ul>';
 		$.each(models, function(index, model){
-			content += "<li><a href='" + model.pageUrl + "'>" + model.pageTitle + "</a>";
+			content += "<li class='bottomMargin'><a class='bold bottomMargin' href='" + model.pageUrl + "'>" + model.pageTitle + "</a>";
 			if(model.pageSummary){
-				content += "<p>" + model.pageSummary + "</p>";
+				content += "<p class='bottomMargin'>" + model.pageSummary + "</p>";
 			}else{
-				content += "<p>" + model.pageTitle + "</p>";
+				content += "<p class='bottomMargin'>" + model.pageTitle + "</p>";
 			}
 			content += "</li>";
 		} );
-		content += "</ul>";
+		content += "</ul></div>";
 		$(".just-causes-widget").html(content);
 	};	
 	
 	var insertContentPlaceHoldersForScripts = function(){
 		$.each(scriptTags, function(i, scriptTag){
 			var div = document.createElement('div');
-			div.className = 'just-causes-widget';
+			div.className = 'just-causes-widget cleanslate';
+			div.innerHTML = "<p>loading...</p>"
 			$(div).insertBefore(scriptTag);
 		});
 	};
