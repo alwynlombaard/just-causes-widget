@@ -16,7 +16,7 @@ generatorApp.controller("AppCtrl", function ($scope, $window, guid){
 	$scope.jgAccount = "";
 	$scope.jgAccount64 = function(){return $window.btoa($scope.jgAccount);};
 	$scope.guid = guid.generate();
-	$scope.showCode = true;
+	$scope.showCode = false;
 	$scope.preview = function(){
 		var $ = angular.element;
 		window.JustCauses = null;
