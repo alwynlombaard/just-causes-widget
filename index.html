@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" media="screen" href="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.css">
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> 
 	<script src="generator.js"></script> 
 
@@ -77,13 +77,13 @@
 	</style>
   </head>
 
-  <body ng-controller="AppCtrl">
+  <body>
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-        
-          <h1 id="project_title">Just-causes-widget Beta</h1>
+		  <a id="forkme_banner" href="https://github.com/alwynlombaard/just-causes-widget">BETA</a>
+          <h1 id="project_title">Just causes widget</h1>
           <h2 id="project_tagline">A widget to embed on your site showing the causes you&#39;re fundraising for on JustGiving</h2>
 
         </header>
@@ -92,17 +92,30 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a name="just-causes-widget" class="anchor" href="#just-causes-widget"><span class="octicon octicon-link"></span></a>Just Causes Widget Beta</h1>
+        <!--
+		<h1>
 
-<p>A widget to embed on your site showing the causes you're fundraising for on JustGiving</p>
+		<a name="just-causes-widget" class="anchor" href="#just-causes-widget"><span class="octicon octicon-link"></span></a>Just causes widget</h1>
 
-	<label for="jgaccount">Enter your JustGiving account email</label> 
-	<input type="email" id="jgaccount" ng-model="jgAccount"/>
-	<div style="min-height: 300px;">
-		<textarea readonly ng-show="jgAccount" rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-{{guid}}');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script></textarea>
+		<p>A widget to embed on your site showing the causes you're fundraising for on JustGiving</p>
+		-->
+	<div ng-controller="AppCtrl">	
+		<label for="jgaccount">Enter your JustGiving account email</label> 
+		<input type="email" id="jgaccount" ng-model="jgAccount"/>
+		
+		
+		<button ng-click="preview();">Show widget code</button>
+		
+		
+		<div id="previewWidget" src=""></div>
+				
+		<div style="min-height: 300px;">
+			<textarea id="sourceCode" ng-show="showCode" readonly rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-{{guid}}');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script></textarea>
+		</div>
+		
+		
+		
 	</div>
-	
 	<!--
 	<div id="jg-widget-guitar-for-good-35"></div><script>(function(){var id="jg-widget-guitar-for-good-35",doc=document,pfx=(window.location.toString().indexOf("https")==0)?"https":"http";var el=doc.getElementById(id);if(el){var js=doc.createElement('script');js.src=pfx+"://widgets.justgiving.com/fundraisingpage/guitar-for-good?enc=ZT1qZy13aWRnZXQtZ3VpdGFyLWZvci1nb29kLTM1Jnc9NDAwJmI9aW5uZXImaWI9dGl0bGUsc3VtbWFyeQ%3D%3D";el.parentNode.insertBefore(js, el);}})();</script>
 	
