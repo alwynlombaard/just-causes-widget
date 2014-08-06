@@ -12,11 +12,13 @@ generatorApp.factory('guid', function() {
   };
 });
 
-generatorApp.controller("AppCtrl", function ($scope, $window, guid){
+generatorApp.controller("AppCtrl", function ($scope, $window, $http, guid){
 	$scope.jgAccount = "";
 	$scope.jgAccount64 = function(){return $window.btoa($scope.jgAccount);};
 	$scope.guid = guid.generate();
-	$scope.showCode = false;
+	$scope.notification = "";
+	$scope.accountExists = false;
+	
 	$scope.preview = function(){
 		var $ = angular.element;
 		window.JustCauses = null;
@@ -28,6 +30,22 @@ generatorApp.controller("AppCtrl", function ($scope, $window, guid){
 		s.src="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount=" + $scope.jgAccount64();
 		var embedder = document.getElementById('previewWidget');
 		embedder.parentNode.insertBefore(s, embedder);
+	};
+	
+	$scope.checkAccount = function() {
+		$http.jsonp("https://api.justgiving.com/4066ece8/v1/account/" + $scope.jgAccount + "/pages?callback=JSON_CALLBACK&format=json")
+		.success(function(data, status, headers, config){
+			$scope.notification = "";
+			$scope.accountExists = true;
+			$scope.preview();
+		})
+		.error(function(data, status, headers, config) {
+			$scope.notification = "Sorry, we were unable to retrieve your details from JustGiving. Are you sure " + $scope.jgAccount + " is registered with JustGiving?";
+			$scope.accountExists = false;
+		});
+		
+		$scope.hello = function(){};
+		
 	};
 });
 

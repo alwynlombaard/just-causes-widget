@@ -37,22 +37,25 @@
 
 		<p>A widget to embed on your site showing the causes you're fundraising for on JustGiving</p>
 		-->
+		
+		
 		<div ng-controller="AppCtrl" style="min-height: 150px;">	
+			<p ng-show="notification">{{notification}}</p>
 			<label for="jgaccount">Enter your JustGiving account email</label> 
 			<input type="email" id="jgaccount" ng-model="jgAccount"/>
 			
-			<button ng-disabled="!jgAccount">Get</button>
-			<button ng-show="jgAccount" ng-click="preview();">Preview widget</button>
-			<button ng-show="jgAccount" ng-click="showCode = true">Get code</button>
+			<button ng-disabled="!jgAccount" ng-click="checkAccount()">Get</button>
 			
 			<div >
-				<div ng-show="showCode">
-					<label for="sourceCode">Widget code</label>		
+				<div ng-show="accountExists">
+					<label for="sourceCode"><p>Copy and paste the following code snippet into your page where you want the widget to appear.</p></label>		
 					<textarea id="sourceCode"  readonly rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;var theUrl='https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}';s.src=theUrl+(theUrl.indexOf("?") >= 0 ? "&" : "?")+'ref='+encodeURIComponent(window.location.href);var embedder=document.getElementById('just-causes-{{guid}}');embedder.parentNode.insertBefore(s,embedder);}if(window.attachEvent){window.attachEvent('onload',async_load);}else{window.addEventListener('load',async_load,false);}})();</script></textarea>
 				</div>
 			</div>
 			
-			<div style="margin:20px;">
+			<div ng-show="accountExists" style="margin:20px;">
+				<p>Here is a preview of what your widget looks like.
+			
 				<div id="previewWidget" src=""></div>
 			</div>
 			
