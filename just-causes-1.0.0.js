@@ -66,6 +66,11 @@
 				}
 			});
 			retrieveFundraisingPageDetails(JustCauses.fundraisingPages);
+		}).always(function(){
+			if(JustCauses.fundraisingPages.length === 0){
+				JustCauses.isDataInit = true;
+				$(".just-causes-widget").html("<div class='just-causes-widget-inner'><a class='bottomMargin topMargin' href='http://www.justgiving.com'>Show you care on JustGiving</a></div>");
+			}
 		});
 	}
 	
@@ -123,7 +128,16 @@
 		$.each(scriptTags, function(i, scriptTag){
 			var div = document.createElement('div');
 			div.className = 'just-causes-widget cleanslate';
-			div.innerHTML = "<p>loading...</p>"
+			div.innerHTML = "<p>loading...</p>";
+			$(div).insertBefore(scriptTag);
+		});
+	};
+	
+	var insertContentPlaceHoldersForScripts = function(){
+		$.each(scriptTags, function(i, scriptTag){
+			var div = document.createElement('div');
+			div.className = 'just-causes-widget cleanslate';
+			div.innerHTML = "<div class='just-causes-widget-inner'><p>loading...</p></div>"
 			$(div).insertBefore(scriptTag);
 		});
 	};
