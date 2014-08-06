@@ -107,7 +107,7 @@
 		var models = getModels();
 		var content = '<div class="just-causes-widget-inner"><ul>';
 		$.each(models, function(index, model){
-			content += "<li class='bottomMargin'><a class='bold bottomMargin' href='" + model.pageUrl + "'>" + model.pageTitle + "</a>";
+			content += "<li class='bottomMargin'><a class='bold bottomMargin topMargin' href='" + model.pageUrl + "'>" + model.pageTitle + "</a>";
 			if(model.pageSummary){
 				content += "<p class='bottomMargin'>" + model.pageSummary + "</p>";
 			}else{

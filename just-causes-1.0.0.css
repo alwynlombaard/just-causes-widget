@@ -28,6 +28,10 @@
 	list-style-type: none !important;
 }
 
+.just-causes-widget  li + li {
+	border-top: 0.1em solid #78256d !important;
+}
+
 .just-causes-widget a,  .just-causes-widget a:hover{
 	display: block !important;
 	color: #000 !important;
@@ -41,6 +45,11 @@
 .just-causes-widget .bottomMargin{
 	margin-bottom: 0.75em !important;
 }
+
+.just-causes-widget .topMargin{
+	margin-top: 0.75em !important;
+}
+
 .just-causes-widget a, .just-causes-widget  p{
 	display: block !important;
 }
