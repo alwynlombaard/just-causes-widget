@@ -84,6 +84,9 @@
 				contentType: "application/json"
 			}).done(function (pageDetail) {
 				JustCauses.fundraisingPageDetails.push(pageDetail);
+				if(pageDetail.charity && $.inArray(pageDetail.charity, JustCauses.charitySummaries) === -1){
+					JustCauses.charitySummaries.push(pageDetail.charity);
+				}
 				updateWidgetContent();
 				pagesProcessed++;
 				if(pagesProcessed === pages.length){
@@ -157,6 +160,7 @@
 		JustCauses.beginDataInit = true;
 		JustCauses.fundraisingPages = [];
 		JustCauses.fundraisingPageDetails = [];
+		JustCauses.charitySummaries = [];
 		insertContentPlaceHoldersForScripts();
 		retrieveFundraisingPages();
 	}	
