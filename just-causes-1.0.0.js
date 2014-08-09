@@ -107,11 +107,30 @@
 			charityName : page.charity ? page.charity.name : "", 
 			pageSummary: page.pageSummary, 
 			pageShortName: page.pageShortName, 
-			pageUrl: "http://" + page.domain + "/" + page.pageShortName
+			pageUrl: "http://" + page.domain + "/" + page.pageShortName,
+			charityImageUrl: page.charity ? page.charity.logoUrl : ""
 		}: null;
 	};
 		
 	var updateWidgetContent = function(){
+		var models = getModels();
+		var content = '<div class="just-causes-widget-inner"><div class="bottomMargin">';
+		$.each(models, function(index, model){
+			content += index === 0 ? '<div>' : "<hr/><div>";
+			content += '<img class="charity-image" title="' + model.charityName +  '" src="' + model.charityImageUrl + '" />';
+			content += '<a class="bold bottomMargin topMargin" href="' + model.pageUrl + '">' + model.charityName + '</a>'
+			if(model.pageSummary){
+				content += '<p class="bottomMargin">' + model.pageSummary + '</p>';
+			}else{
+				content += '<p class="bottomMargin">' + model.pageTitle + '</p>';
+			}
+			content += '</div>';
+		} );
+		content += '</div></div>';
+		$(".just-causes-widget").html(content);
+	};		
+	
+	var updateWidgetContentForFundraisingPages = function(){
 		var models = getModels();
 		var content = '<div class="just-causes-widget-inner"><ul>';
 		$.each(models, function(index, model){
