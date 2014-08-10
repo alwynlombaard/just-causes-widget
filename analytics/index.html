@@ -1,0 +1,35 @@
+<html>
+<head>
+<script src="https://www.google-analytics.com/analytics.js"></script>
+</head>
+<body>
+<script>
+  
+var getAnchor = function(href) {
+	var a = document.createElement("a");
+	a.href = href;
+	return a;
+};
+
+var getQueryString = function(uri){
+	var a = getAnchor(uri);
+	return a.search;	
+};
+	
+function getParameterByName(name, queryString) {
+	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		results = regex.exec(queryString);
+	return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var ref = getParameterByName("ref", document.location);
+
+ga('create', 'UA-52220218-3', 'auto');
+
+ga('send', 'event', 'widget', 'loaded', ref, 1);
+
+document.write(ref);
+
+</script>
+</body>
+</html>

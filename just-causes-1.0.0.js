@@ -33,6 +33,11 @@
 			results = regex.exec(queryString);
 		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
+	
+	var recordAnalyticsEvent = function(ref){
+		var src = 'https://' + host + '/analytics/?ref=' + encodeURIComponent(ref);
+		$('<iframe style ="display:none;" src="' + src + '" />').insertBefore(".just-causes-widget"); 
+	};
     
 	var scriptTags = $.grep(document.getElementsByTagName('script'), function(scriptTag){return getHostAndPath(scriptTag.src).replace(/\//g, '') === scriptHostAndPath.replace(/\//g, ''); });
 	if(scriptTags && scriptTags.length > 0){
@@ -165,8 +170,10 @@
 			div.innerHTML = "<div class='just-causes-widget-inner'><p>loading...</p></div>"
 			$(div).insertBefore(scriptTag);
 		});
+		
+		recordAnalyticsEvent(ref);
 	};
-	
+		
 	if (styleTags.length === 0) {
 		var styleTag = document.createElement("link");
 		styleTag.rel = "stylesheet";
