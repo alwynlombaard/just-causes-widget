@@ -1,7 +1,7 @@
 Just Causes Widget  Beta
 ==================
 
-Warning! Content in widget and source location is subject to major changes while in Beta
+Warning! Content in widget and source location is subject to changes while in Beta
 
 A widget to embed on your site showing the causes you're fundraising for on JustGiving
 
