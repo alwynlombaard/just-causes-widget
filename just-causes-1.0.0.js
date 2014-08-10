@@ -118,12 +118,13 @@
 		$.each(models, function(index, model){
 			content += index === 0 ? '<div>' : "<hr/><div>";
 			content += '<img class="charity-image" title="' + model.charityName +  '" src="' + model.charityImageUrl + '" />';
-			content += '<a class="bold bottomMargin topMargin" href="' + model.pageUrl + '">' + model.charityName + '</a>'
+			content += '<a class="bold bottomMargin topMargin"  target="_blank" href="' + model.pageUrl + '">' + model.charityName + '</a>'
 			if(model.pageSummary){
-				content += '<p class="bottomMargin">' + model.pageSummary + '</p>';
+				content += '<p>' + model.pageSummary + '</p>';
 			}else{
-				content += '<p class="bottomMargin">' + model.pageTitle + '</p>';
+				content += '<p>' + model.pageTitle + '</p>';
 			}
+			content += '<p class="readmore"><a target="_blank" href="' + model.pageUrl + '">Read more...</a></p>'
 			content += '</div>';
 		} );
 		content += '</div></div>';
