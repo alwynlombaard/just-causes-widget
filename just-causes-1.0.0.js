@@ -108,7 +108,8 @@
 			pageSummary: page.pageSummary, 
 			pageShortName: page.pageShortName, 
 			pageUrl: "http://" + page.domain + "/" + page.pageShortName,
-			charityImageUrl: page.charity ? page.charity.logoUrl : ""
+			charityImageUrl: page.charity ? page.charity.logoUrl : "",
+			charityRegistrationNumber: page.charity ? page.charity.registrationNumber : ""
 		}: null;
 	};
 		
@@ -118,7 +119,8 @@
 		$.each(models, function(index, model){
 			content += index === 0 ? '<div>' : "<hr/><div>";
 			content += '<img class="charity-image" title="' + model.charityName +  '" src="' + model.charityImageUrl + '" />';
-			content += '<a class="bold bottomMargin topMargin"  target="_blank" href="' + model.pageUrl + '">' + model.charityName + '</a>'
+			content += '<a class="bold topMargin"  target="_blank" href="' + model.pageUrl + '">' + model.charityName + '</a>'
+			content += '<p class="charity-reg">' + model.charityRegistrationNumber + '</p>'
 			if(model.pageSummary){
 				content += '<p>' + model.pageSummary + '</p>';
 			}else{
