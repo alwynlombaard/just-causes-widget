@@ -9,5 +9,8 @@ Get it here: http://blog.lombaard.co.uk/just-causes-widget
 
 See it in action at http://blog.lombaard.co.uk/blog/archives/
 
+Example:
+
+![sample widget](https://raw.githubusercontent.com/alwynlombaard/just-causes-widget/master/example.jpg)
 
 
