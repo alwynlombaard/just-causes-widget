@@ -121,18 +121,21 @@
 	var updateWidgetContent = function(){
 		var models = getModels();
 		var content = '<div class="just-causes-widget-inner"><div class="bottomMargin">';
-		content += '<p class="bold small-text">I support the following causes on JustGiving.</p>'
+		if(models.length > 0)
+		{
+			content += '<p class="bold small-text">I support the following cause' +  (models.length > 1 ? 's' : '') + ' on JustGiving</p>';
+		}
 		$.each(models, function(index, model){
 			content += index === 0 ? '<div>' : "<hr/><div>";
 			content += '<img class="charity-image" title="' + model.charityName +  '" src="' + model.charityImageUrl + '" />';
-			content += '<a class="bold topMargin"  target="_blank" href="' + model.pageUrl + '">' + model.charityName + '</a>'
-			content += '<p class="charity-reg">' + model.charityRegistrationNumber + '</p>'
+			content += '<a class="bold topMargin"  target="_blank" href="' + model.pageUrl + '">' + model.charityName + '</a>';
+			content += '<p class="charity-reg">' + model.charityRegistrationNumber + '</p>';
 			if(model.pageSummary){
 				content += '<p>' + model.pageSummary + '</p>';
 			}else{
 				content += '<p>' + model.pageTitle + '</p>';
 			}
-			content += '<p class="readmore"><a target="_blank" href="' + model.pageUrl + '">Read more...</a></p>'
+			content += '<p class="readmore"><a target="_blank" href="' + model.pageUrl + '">Read more...</a></p>';
 			content += '</div>';
 		} );
 		content += '</div></div>';
