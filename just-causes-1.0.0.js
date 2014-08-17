@@ -121,6 +121,7 @@
 	var updateWidgetContent = function(){
 		var models = getModels();
 		var content = '<div class="just-causes-widget-inner"><div class="bottomMargin">';
+		content += '<p class="bold small-text">I support the following causes on JustGiving.</p>'
 		$.each(models, function(index, model){
 			content += index === 0 ? '<div>' : "<hr/><div>";
 			content += '<img class="charity-image" title="' + model.charityName +  '" src="' + model.charityImageUrl + '" />';
