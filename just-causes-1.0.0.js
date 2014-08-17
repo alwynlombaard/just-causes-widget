@@ -123,7 +123,7 @@
 		var content = '<div class="just-causes-widget-inner"><div class="bottomMargin">';
 		if(models.length > 0)
 		{
-			content += '<p class="bold small-text">I support the following cause' +  (models.length > 1 ? 's' : '') + ' on JustGiving</p>';
+			content += '<p class="bold small-text">I fundraise for the following cause' +  (models.length > 1 ? 's' : '') + ' on JustGiving:</p>';
 		}
 		$.each(models, function(index, model){
 			content += index === 0 ? '<div>' : "<hr/><div>";
