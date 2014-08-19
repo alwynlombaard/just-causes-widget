@@ -114,7 +114,9 @@
 			pageShortName: page.pageShortName, 
 			pageUrl: "http://" + page.domain + "/" + page.pageShortName,
 			charityImageUrl: page.charity ? page.charity.logoUrl : "",
-			charityRegistrationNumber: page.charity ? page.charity.registrationNumber : ""
+			charityRegistrationNumber: page.charity ? page.charity.registrationNumber : "",
+			currencySymbol: page.currencySymbol,
+			raisedSoFar: parseFloat(page.totalRaisedOnline) + parseFloat(page.totalRaisedSms) + parseFloat(page.totalRaisedOffline) + parseFloat(page.totalRaisedOffline)
 		}: null;
 	};
 		
@@ -131,9 +133,12 @@
 			content += '<a class="bold topMargin"  target="_blank" href="' + model.pageUrl + '">' + model.charityName + '</a>';
 			content += '<p class="charity-reg">' + model.charityRegistrationNumber + '</p>';
 			if(model.pageSummary){
-				content += '<p>' + model.pageSummary + '</p>';
+				content += '<p>' + model.pageSummary + '.</p>';
 			}else{
 				content += '<p>' + model.pageTitle + '</p>';
+			}
+			if(model.raisedSoFar){
+				content += '<p class="topMargin">' + model.currencySymbol + (model.raisedSoFar % 1 === 0 ? model.raisedSoFar : model.raisedSoFar.toFixed(2)) + ' raised so far.</p>'
 			}
 			content += '<p class="readmore"><a target="_blank" href="' + model.pageUrl + '">Read more...</a></p>';
 			content += '</div>';
