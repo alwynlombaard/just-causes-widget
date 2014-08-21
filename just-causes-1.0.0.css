@@ -92,5 +92,10 @@
 	font-size: 0.6em !important;
 }
 
+.just-causes-widget .float-left{
+	float: left !important;
+}
 
-
+.just-causes-widget .text-align-right{
+	text-align: right !important;
+}

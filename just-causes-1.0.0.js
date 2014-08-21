@@ -143,6 +143,7 @@
 			content += '<p class="readmore"><a target="_blank" href="' + model.pageUrl + '">Read more...</a></p>';
 			content += '</div>';
 		} );
+		content += '<hr/><div><div><p class="small-text float-left"><a target="_blank" href="https://github.com/alwynlombaard/just-causes-widget">Widget by Alwyn Lombaard</a></p></div><div><p class="small-text text-align-right"><a target="_blank" href="http://blog.lombaard.co.uk/just-causes-widget">Get your own widget here</a></p></div></div>';
 		content += '</div></div>';
 		$(".just-causes-widget").html(content);
 	};		
