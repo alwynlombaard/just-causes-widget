@@ -28,6 +28,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
+	  
+	  
+		<script type="text/javascript" id="just-causes-5c7f9bd6-8fb2-4bf7-aa2e-c81ca52c4f3e">(function(){function e(){var e=document.createElement("script");e.type="text/javascript";e.async=true;var t="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount=YWx3eW5AanVzdGdpdmluZy5jb20=";e.src=t+(t.indexOf("?")>=0?"&":"?")+"ref="+encodeURIComponent(window.location.href);var n=document.getElementById("just-causes-5c7f9bd6-8fb2-4bf7-aa2e-c81ca52c4f3e");n.parentNode.insertBefore(e,n)}if(window.attachEvent){window.attachEvent("onload",e)}else{window.addEventListener("load",e,false)}})()</script>
+
         <!--
 		<h1>
 
@@ -40,11 +44,11 @@
 		<div ng-controller="AppCtrl" style="min-height: 150px;">	
 			<p ng-show="notification">{{notification}}</p>
 			<label for="jgaccount">Enter your JustGiving account email</label> 
-			<input type="email" id="jgaccount" ng-model="jgAccount"/>
+			<input type="email" id="jgaccount" ng-model="jgAccount" />
 			
 			<button ng-disabled="!jgAccount" ng-click="checkAccount()">Get</button>
 			
-			<div >
+			<div>
 				<div ng-show="accountExists">
 					<label for="sourceCode"><p>Copy and paste the following code snippet into your page where you want the widget to appear.</p></label>		
 					<textarea id="sourceCode"  readonly rows="10" cols="80"><script type="text/javascript" id="just-causes-{{guid}}">(function(){function e(){var e=document.createElement("script");e.type="text/javascript";e.async=true;var t="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount={{jgAccount64()}}";e.src=t+(t.indexOf("?")>=0?"&":"?")+"ref="+encodeURIComponent(window.location.href);var n=document.getElementById("just-causes-{{guid}}");n.parentNode.insertBefore(e,n)}if(window.attachEvent){window.attachEvent("onload",e)}else{window.addEventListener("load",e,false)}})()</script></textarea>
