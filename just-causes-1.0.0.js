@@ -188,7 +188,7 @@
 		var styleTag = document.createElement("link");
 		styleTag.rel = "stylesheet";
 		styleTag.type = "text/css";
-		styleTag.href = "https://" + host + "/just-causes-1.0.0.css";
+		styleTag.href = "https://" + host + "/just-causes-1.0.0.css?v=1";
 		styleTag.media = "all";
 		document.getElementsByTagName('head')[0].appendChild(styleTag);
 		styleTags.push(styleTag);
