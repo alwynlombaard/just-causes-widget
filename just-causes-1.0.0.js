@@ -143,7 +143,7 @@
 			content += '<p class="readmore"><a target="_blank" href="' + model.pageUrl + '">Read more...</a></p>';
 			content += '</div>';
 		} );
-		content += '<hr/><div><div><p class="small-text float-left"><a target="_blank" href="https://github.com/alwynlombaard/just-causes-widget">Widget by Alwyn Lombaard</a></p></div><div><p class="small-text text-align-right"><a target="_blank" href="http://blog.lombaard.co.uk/just-causes-widget">Get your own widget here</a></p></div></div>';
+		content += '<hr/><div><div><p class="small-text float-left"><a target="_blank" href="https://github.com/alwynlombaard/just-causes-widget">Beta by Alwyn Lombaard</a></p></div><div><p class="small-text text-align-right"><a target="_blank" href="http://blog.lombaard.co.uk/just-causes-widget">Get your own</a></p></div></div>';
 		content += '</div></div>';
 		$(".just-causes-widget").html(content);
 	};		
@@ -175,10 +175,10 @@
 	
 	var insertContentPlaceHoldersForScripts = function(){
 		$.each(scriptTags, function(i, scriptTag){
-			var div = document.createElement('div');
-			div.className = 'just-causes-widget cleanslate';
-			div.innerHTML = "<div class='just-causes-widget-inner'><p>loading...</p></div>"
-			$(div).insertBefore(scriptTag);
+			var wrapper = document.createElement('div');
+			wrapper.className = 'just-causes-wrapper';
+			wrapper.innerHTML = '<div class="just-causes-widget cleanslate"><div class="just-causes-widget-inner"><p>loading...</p></div></div>'
+			$(wrapper).insertBefore(scriptTag);
 		});
 		
 		recordAnalyticsEvent(ref);
