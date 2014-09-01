@@ -116,7 +116,7 @@
 			charityImageUrl: page.charity ? page.charity.logoUrl : "",
 			charityRegistrationNumber: page.charity ? page.charity.registrationNumber : "",
 			currencySymbol: page.currencySymbol,
-			raisedSoFar: parseFloat(page.totalRaisedOnline) + parseFloat(page.totalRaisedSms) + parseFloat(page.totalRaisedOffline) + parseFloat(page.totalRaisedOffline)
+			raisedSoFar: parseFloat(page.totalRaisedOnline) + parseFloat(page.totalRaisedSms) + parseFloat(page.totalRaisedOffline)
 		}: null;
 	};
 		
@@ -147,22 +147,6 @@
 		content += '</div></div>';
 		$(".just-causes-widget").html(content);
 	};		
-	
-	var updateWidgetContentForFundraisingPages = function(){
-		var models = getModels();
-		var content = '<div class="just-causes-widget-inner"><ul>';
-		$.each(models, function(index, model){
-			content += "<li class='bottomMargin'><a class='bold bottomMargin topMargin' href='" + model.pageUrl + "'>" + model.pageTitle + "</a>";
-			if(model.pageSummary){
-				content += "<p class='bottomMargin'>" + model.pageSummary + "</p>";
-			}else{
-				content += "<p class='bottomMargin'>" + model.pageTitle + "</p>";
-			}
-			content += "</li>";
-		} );
-		content += "</ul></div>";
-		$(".just-causes-widget").html(content);
-	};	
 	
 	var insertContentPlaceHoldersForScripts = function(){
 		$.each(scriptTags, function(i, scriptTag){
