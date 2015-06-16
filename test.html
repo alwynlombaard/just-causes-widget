@@ -2,12 +2,32 @@
 <head>
 
 </head>
-<body>
-<h1>Test the widget</h1>
+ <body>
+ 
+ <script src="https://identity.justgiving.com/js/connect.js"></script>
 
-	<div>
-		<script type="text/javascript" id="just-causes-5c7f9bd6-8fb2-4bf7-aa2e-c81ca52c4f3e">(function(){function e(){var e=document.createElement("script");e.type="text/javascript";e.async=true;var t="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount=YWx3eW5AanVzdGdpdmluZy5jb20=";e.src=t+(t.indexOf("?")>=0?"&":"?")+"ref="+encodeURIComponent(window.location.href);var n=document.getElementById("just-causes-5c7f9bd6-8fb2-4bf7-aa2e-c81ca52c4f3e");n.parentNode.insertBefore(e,n)}if(window.attachEvent){window.attachEvent("onload",e)}else{window.addEventListener("load",e,false)}})()</script>
-	</div>
-  
-</body>
+                            <jg-login onlogin="checkLoginState" />
+
+                            <script>
+
+                            JG.init({
+                                appId: '4066ece8',
+                                environment: 'production'
+                            });
+
+                            var checkLoginState = function() {
+                                JG.checkConnected(function(status){
+                                    if(status.connected) {
+                                      // access data about the signed-in user and use it how you want:
+                                      var displayName = status.displayName;
+                                      var email = status.email;
+                                      var userId = status.userId;
+                                      var accessToken = status.accessToken;
+                                    }
+                                });
+                            }
+                            </script>
+							
+							
+</body>		
 </html>
