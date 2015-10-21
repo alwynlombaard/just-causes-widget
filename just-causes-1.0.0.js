@@ -4,7 +4,7 @@
 
 	"use strict";
 	var $ = jQuery.noConflict();
-	var host = "just-causes-widget.azurewebsites.net";
+	var host = "just-causes.azurewebsites.net";
 	var scriptHostAndPath = host + '/just-causes-1.0.0.js';
 	var jgApi = "https://api.justgiving.com/4066ece8/v1";
 	var jgAccount = "";
