@@ -27,7 +27,7 @@ generatorApp.controller("AppCtrl", function ($scope, $window, $http, guid){
 		var s=document.createElement('script');
 		s.type='text/javascript';
 		s.async=true;
-		s.src="https://just-causes-widget.azurewebsites.net/just-causes-1.0.0.js?jgaccount=" + $scope.jgAccount64();
+		s.src="https://just-causes.azurewebsites.net/just-causes-1.0.0.js?jgaccount=" + $scope.jgAccount64();
 		var embedder = document.getElementById('previewWidget');
 		embedder.parentNode.insertBefore(s, embedder);
 	};
