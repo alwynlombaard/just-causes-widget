@@ -9,7 +9,7 @@
 	var jgApi = "https://api.justgiving.com/4066ece8/v1";
 	var jgAccount = "";
 	var ref = "";
-	var numberOfPages = 10;
+	var numberOfPages = 15;
 	
 	var getAnchor = function(href) {
 		var a = document.createElement("a");
