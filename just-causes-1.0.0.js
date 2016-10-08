@@ -9,7 +9,7 @@
 	var jgApi = "https://api.justgiving.com/4066ece8/v1";
 	var jgAccount = "";
 	var ref = "";
-	var numberOfPages = 15;
+	var numberOfPages = 10;
 	
 	var getAnchor = function(href) {
 		var a = document.createElement("a");
@@ -62,12 +62,14 @@
 			contentType: "application/json",
 			url: jgApi + "/account/" + jgAccount  + "/pages?format=json"
 		}).done(function (pages) {
+			var pagesProcessed = 0;
 			$.each(pages, function(index, page){
-				if(index === numberOfPages){
+				if(pagesProcessed === numberOfPages){
 					return false;
 				}
 				if(page.pageStatus === "Active"){
 					JustCauses.fundraisingPages.push(page);
+					pagesProcessed++;
 				}
 			});
 			retrieveFundraisingPageDetails(JustCauses.fundraisingPages);
