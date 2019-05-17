@@ -18,3 +18,5 @@ Example:
 
 <a href="ms-outlook://compose?to=joe@example.com&subject=Hello" title="Title">
 an example</a> 
+
+ms-outlook://compose?to=joe@example.com&subject=Hello
