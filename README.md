@@ -14,4 +14,4 @@ Example:
 ![sample widget](https://raw.githubusercontent.com/alwynlombaard/just-causes-widget/master/example.jpg)
 
 
-ms-outlook://compose?to=joe@example.com&subject=Hello
+<ms-outlook://compose?to=joe@example.com&subject=Hello>
